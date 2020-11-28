@@ -14,9 +14,8 @@ RUN apt-get update && apt-get upgrade -y && \
   apt-get install -yq perl build-essential curl wget unzip && \
   apt-get install -yq deluge-console python3-libtorrent && \
   apt-get install -yq python3.8 python3-pip git && \
-  cpan Archive::Zip Net::SSLeay HTML::Entities XML::LibXML Digest::SHA JSON JSON::XS
-
-RUN cd /root && \
+  cpan Archive::Zip Net::SSLeay HTML::Entities XML::LibXML Digest::SHA JSON JSON::XS && \
+  cd /root && \
   git clone https://github.com/mreilaender/deluge-send-torrent.git deluge-send-torrent && \
   cd deluge-send-torrent && \
   bash -c 'pip3 install .'
